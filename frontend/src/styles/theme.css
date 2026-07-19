@@ -1,0 +1,16 @@
+:root {
+  --bg: #050505;
+  --surface: #111111;
+  --surface-hover: #181818;
+  --border: #262626;
+
+  --text: #ffffff;
+  --muted: #a1a1aa;
+
+  --accent: #00c896;
+  --accent-hover: #00d8a3;
+
+  --danger: #ef4444;
+
+  --radius: 20px;
+}

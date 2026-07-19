@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE Stream Test</title>
+</head>
+<body>
+
+<h2>Gemini Streaming Test</h2>
+
+<input
+    id="message"
+    type="text"
+    placeholder="Ask something..."
+    style="width:400px;"
+>
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+<pre id="output"></pre>
+
+<script>
+async function sendMessage() {
+
+    const message = document.getElementById("message").value;
+
+    const output = document.getElementById("output");
+
+    output.textContent = "";
+
+    const response = await fetch(
+        "http://localhost:5000/api/chat/stream",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                message
+            })
+        }
+    );
+
+    const reader = response.body.getReader();
+
+    const decoder = new TextDecoder();
+
+    while(true){
+
+        const {done,value}=await reader.read();
+
+        if(done) break;
+
+        const chunk=decoder.decode(value);
+
+        console.log(chunk);
+
+        output.textContent+=chunk;
+
+    }
+
+}
+</script>
+
+</body>
+</html>
