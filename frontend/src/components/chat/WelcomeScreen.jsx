@@ -35,9 +35,9 @@ export default function WelcomeScreen({
           opacity: 1,
           y: 0,
         }}
-        className="text-6xl font-black tracking-tight"
+        className="text-7xl font-black tracking-tight"
       >
-        2K23B AI
+        Lingua AI
       </motion.h1>
 
       <motion.p

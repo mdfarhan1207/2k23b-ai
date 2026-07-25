@@ -7,7 +7,7 @@ export async function generateResponse(message) {
     });
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-3.6-flash",
       contents: message,
     });
 
@@ -24,7 +24,7 @@ export async function generateStreamingResponse(message) {
   });
 
   const stream = await ai.models.generateContentStream({
-    model: "gemini-3.5-flash",
+    model: "gemini-3.6-flash",
     contents: message,
   });
 

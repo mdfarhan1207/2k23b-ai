@@ -3,3 +3,27 @@
 @import "./styles/theme.css";
 @import "./styles/globals.css";
 @import "./styles/animations.css";
+
+::selection{
+    background:#10b981;
+    color:white;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#1f2937;
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#10b981;
+}
+
+body{
+    background: var(--bg);
+    color: var(--text);
+    transition: background .3s ease, color .3s ease;
+}

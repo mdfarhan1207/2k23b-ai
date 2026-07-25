@@ -36,6 +36,7 @@ export async function chat(req, res) {
 
 
 export async function streamChat(req, res) {
+    let keepAlive;
     try {
         const { message } = req.body;
 
@@ -63,7 +64,7 @@ export async function streamChat(req, res) {
         });
 
 
-        const keepAlive = setInterval(() => {
+        keepAlive = setInterval(() => {
             res.write(": ping\n\n");
         }, 15000);
         for await (const chunk of stream) {
@@ -84,7 +85,7 @@ export async function streamChat(req, res) {
         // Tell the frontend we're done
         res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
 
-        clearInterval(keepAlive);
+        if (keepAlive) clearInterval(keepAlive);
         res.end();
 
 
@@ -104,7 +105,7 @@ export async function streamChat(req, res) {
             })}\n\n`
         );
 
-        clearInterval(keepAlive);
+        if (keepAlive) clearInterval(keepAlive);
         res.end();
     }
 }
