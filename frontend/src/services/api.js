@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "http://13.126.135.28:5000";
 
 export async function sendMessage(message) {
   const response = await fetch(`${API_BASE_URL}/api/chat`, {
