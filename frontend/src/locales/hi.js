@@ -1,5 +1,5 @@
 export default {
-  title: "Lingua AI",
+  title: "Syntax Sage",
   subtitle: "Google Gemini द्वारा संचालित",
   placeholder: "कुछ भी पूछें...",
   send: "भेजें",

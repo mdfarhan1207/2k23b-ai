@@ -37,7 +37,7 @@ export default function WelcomeScreen({
         }}
         className="text-7xl font-black tracking-tight"
       >
-        Lingua AI
+        Syntax Sage
       </motion.h1>
 
       <motion.p

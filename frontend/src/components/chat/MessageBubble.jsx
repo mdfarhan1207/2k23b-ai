@@ -23,7 +23,7 @@ export default function MessageBubble({ role, content }) {
               : "text-zinc-400"
           }`}
         >
-          {isUser ? "You" : "Lingua AI"}
+          {isUser ? "You" : "Syntax Sage"}
         </p>
 
         <div

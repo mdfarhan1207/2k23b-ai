@@ -15,7 +15,7 @@ export default function Logo() {
 
       <div>
         <h1 className="text-xl font-bold tracking-tight">
-          Lingua AI
+          Syntax Sage
         </h1>
 
         <p className="text-xs text-zinc-500">

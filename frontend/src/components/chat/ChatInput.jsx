@@ -90,7 +90,7 @@ export default function ChatInput({ onSend, loading }) {
 
         <input
           type="text"
-          placeholder="Ask Lingua AI anything..."
+          placeholder="Ask Syntax Sage anything..."
           value={message}
           disabled={loading}
           onChange={(e) => setMessage(e.target.value)}
